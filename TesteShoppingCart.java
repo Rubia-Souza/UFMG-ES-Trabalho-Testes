@@ -15,22 +15,36 @@ import java.util.List;
 public class TesteShoppingCart {
 
   private ShoppingCart shoppingCart;
+  private Item itemESM;
+  private Item itemGoF;
 
   @Before
   public void setUp() {
     shoppingCart = new ShoppingCart();
-    shoppingCart.addItem(new Item("ESM", 65.0));
-    shoppingCart.addItem(new Item("GoF", 120.0));
+    
+    itemESM = new Item("ESM", 65.0);
+    itemGoF = new Item("GoF", 120.0);
+
+    shoppingCart.addItem(itemESM);
+    shoppingCart.addItem(itemGoF);
   }
 
   @Test
   public void testAddItem() {
-    // Escreva aqui seu código de teste
+    Item itemTeste1 = new Item("Teste1", 777.0);
+    Item itemTeste2 = new Item("Teste2", 888.0);
+    Item itemTeste3 = new Item("Teste3", 999.0);
+
+    shoppingCart.addItem(itemTeste1);
+    shoppingCart.addItem(itemTeste2);
+    shoppingCart.addItem(itemTeste3);
+
+    assertEquals(5, shoppingCart.getItemCount());
   }
 
   @Test
   public void testRemoveItem() {
-    // Escreva aqui seu código de teste
+    
   }
 
   @Test
