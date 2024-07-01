@@ -51,7 +51,8 @@ public class TesteShoppingCart {
 
   @Test
   public void testGetTotalPrice() {
-    // Escreva aqui seu código de teste
+    double totalPrice = itemESM.getPrice() + itemGoF.getPrice();
+    assertEquals(totalPrice, shoppingCart.getTotalPrice(), 0.0);
   }
 
   @Test
