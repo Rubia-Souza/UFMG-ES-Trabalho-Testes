@@ -44,7 +44,9 @@ public class TesteShoppingCart {
 
   @Test
   public void testRemoveItem() {
-    
+    shoppingCart.removeItem(itemESM);
+
+    assertEquals(1, shoppingCart.getItemCount());
   }
 
   @Test
