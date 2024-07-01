@@ -57,6 +57,7 @@ public class TesteShoppingCart {
 
   @Test
   public void testClearCart() {
-    // Escreva aqui seu código de teste
+    shoppingCart.clearCart();
+    assertEquals(0, shoppingCart.getItemCount());
   }
 }
