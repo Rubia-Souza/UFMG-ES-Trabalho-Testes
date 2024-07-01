@@ -63,4 +63,17 @@ public class BibliotecaTest {
 	  bib.emprestarLivro(livro1, usuario1);
     bib.emprestarLivro(livro1, usuario2);
 	}
+
+  @Test
+  public void testaLivrosEmprestadosUsuario() throws ExcecaoLivroEmprestado {
+    bib.emprestarLivro(livro1, usuario1);
+    bib.emprestarLivro(livro2, usuario1);
+
+    List<Livro> livrosEmprestados = bib.livrosEmprestadosUsuario(usuario1);
+
+    assertEquals(2, livrosEmprestados.size());
+    assertTrue(livrosEmprestados.contains(livro1));
+    assertTrue(livrosEmprestados.contains(livro2));
+    assertFalse(livrosEmprestados.contains(livro3));
+  }
 }
